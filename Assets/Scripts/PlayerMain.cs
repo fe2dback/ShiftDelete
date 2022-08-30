@@ -57,15 +57,15 @@ public class PlayerMain : MonoBehaviour
             isControl = false;
             jumpCheck = false;
         }
-        if(isGrounded == true && isControl == false && rb2d.velocity.x < 0.1f && jumpCheck == false)
+        if(isGrounded == true && isControl == false && (rb2d.velocity.x < 0.05f && rb2d.velocity.x > -0.05f ) && jumpCheck == false)
         {
             isControl = true;
         }
         
         isGrounded = Physics2D.OverlapCircle(new Vector2(rb2d.transform.position.x, 
             rb2d.transform.position.y - 0.5f), 0.5f, groundMask);
-        ActionJump();
         ActionMove();
+        ActionJump();
 
     }
 
@@ -76,7 +76,7 @@ public class PlayerMain : MonoBehaviour
         //CheckIsGrounded();
         //CheckLanded();
         SetVelocity();
-        SetLocalScale();
+        //SetLocalScale();
 
     }
 
@@ -142,7 +142,7 @@ public class PlayerMain : MonoBehaviour
     }
 
 
-
+    /*
     private void SetLocalScale()
 
     {
@@ -152,6 +152,7 @@ public class PlayerMain : MonoBehaviour
         transform.localScale = new Vector3(xAxis > 0 ? 1 : -1, 1, 1);
 
     }
+    */
 
     private void ActionMove()
 
@@ -215,13 +216,13 @@ public class PlayerMain : MonoBehaviour
 
             if (Input.GetKeyUp(KeyCode.Space))
             {
+                isJumped = true;
+                jumpCheck = true;
                 if (isGrounded)
                 {
                     rb2d.velocity = new Vector2(xAxis * moveCoff, jumpCoff);
                     jumpCoff = 0.0f;
                 }
-                isJumped = true;
-                jumpCheck = true;
             }
         }
         
