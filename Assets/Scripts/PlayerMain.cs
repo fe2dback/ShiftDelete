@@ -24,6 +24,7 @@ public class PlayerMain : MonoBehaviour
     public PhysicsMaterial2D normalMat;
 
     public bool isControl;
+    public bool jumpCheck;
 
 
     // Start is called before the first frame update
@@ -43,19 +44,29 @@ public class PlayerMain : MonoBehaviour
 
         walkCheck = true;
         isControl = true;
+
+        jumpCheck = false;
     }
 
     // Update is called once per frame
     void Update()
     {
-        if(isGrounded == true && rb2d.velocity.x == 0)
+        
+        if(isGrounded == true && jumpCheck == true)
+        {
+            isControl = false;
+            jumpCheck = false;
+        }
+        if(isGrounded == true && isControl == false && rb2d.velocity.x < 0.1f && jumpCheck == false)
         {
             isControl = true;
         }
+        
         isGrounded = Physics2D.OverlapCircle(new Vector2(rb2d.transform.position.x, 
             rb2d.transform.position.y - 0.5f), 0.5f, groundMask);
         ActionJump();
         ActionMove();
+
     }
 
     private void FixedUpdate()
@@ -113,15 +124,18 @@ public class PlayerMain : MonoBehaviour
     */
     private void SetVelocity()
     {
-        if(jumpCoff == 0.0f && isGrounded && isJumped)
+        if(isControl == true)
         {
-            
-            rb2d.AddForce(new Vector2(xAxis * (moveCoff * 2), 0));
+            if (jumpCoff == 0.0f && isGrounded && isJumped)
+            {
 
-            float x = Mathf.Clamp(rb2d.velocity.x, -12, 12);
-            float y = Mathf.Clamp(rb2d.velocity.y, -30, 30); 
-            
-            rb2d.velocity = new Vector2(x, y);
+                rb2d.AddForce(new Vector2(xAxis * (moveCoff * 2), 0));
+
+                float x = Mathf.Clamp(rb2d.velocity.x, -12, 12);
+                float y = Mathf.Clamp(rb2d.velocity.y, -30, 30);
+
+                rb2d.velocity = new Vector2(x, y);
+            }
         }
 
      
@@ -142,72 +156,75 @@ public class PlayerMain : MonoBehaviour
     private void ActionMove()
 
     {
-        
-        moveInput = Input.GetAxisRaw("Horizontal");
-        xAxis = Input.GetAxis("Horizontal");
-        
-    
-        if (Input.GetAxisRaw("Horizontal") == 0)
+        if(isControl == true)
         {
-            walkCheck = false;
-        }
-        else
-        {
-            walkCheck = true;
-        }
-
-        if (Mathf.Abs(xAxis) < 0.1f)
-        {
-            xAxis = 0;
-            //animator.SetBool("IsWalk", false);
-        }
-        else
-        {
-            //animator.SetBool("IsWalk", true);
-        }
+            moveInput = Input.GetAxisRaw("Horizontal");
+            xAxis = Input.GetAxis("Horizontal");
 
 
+            if (Input.GetAxisRaw("Horizontal") == 0)
+            {
+                walkCheck = false;
+            }
+            else
+            {
+                walkCheck = true;
+            }
 
+            if (Mathf.Abs(xAxis) < 0.1f)
+            {
+                xAxis = 0;
+                //animator.SetBool("IsWalk", false);
+            }
+            else
+            {
+                //animator.SetBool("IsWalk", true);
+            }
+        }
     }
     private void ActionJump()
-    {    
-        if(jumpCoff > 0)
+    {   
+        if(isControl == true)
         {
-            rb2d.sharedMaterial = bounceMat;
-        }
-        else
-        {
-            rb2d.sharedMaterial = normalMat;
-        }
-
-        if(Input.GetKey(KeyCode.Space) && isGrounded && isJumped)
-        {
-            jumpCoff += 0.2f;
-        }
-
-        if (Input.GetKeyDown(KeyCode.Space) && isGrounded && isJumped)
-        {
-            rb2d.velocity = new Vector2(0.0f, rb2d.velocity.y);
-        }
-
-        if (jumpCoff >= 40f && isGrounded)
-        {
-            float tempX = (moveCoff * 2) * xAxis;
-            float tempY = jumpCoff;
-            rb2d.velocity = new Vector2(tempX, tempY);
-            Invoke("ResetJump", 0.2f);
-        }
-
-        if(Input.GetKeyUp(KeyCode.Space))
-        {
-            if(isGrounded)
+            if (jumpCoff > 0)
             {
-                rb2d.velocity = new Vector2(xAxis * moveCoff, jumpCoff);
-                jumpCoff = 0.0f;
+                rb2d.sharedMaterial = bounceMat;
             }
-            isControl = false;
-            isJumped = true;
+            else
+            {
+                rb2d.sharedMaterial = normalMat;
+            }
+
+            if (Input.GetKey(KeyCode.Space) && isGrounded && isJumped)
+            {
+                jumpCoff += 0.2f;
+            }
+
+            if (Input.GetKeyDown(KeyCode.Space) && isGrounded && isJumped)
+            {
+                rb2d.velocity = new Vector2(0.0f, rb2d.velocity.y);
+            }
+
+            if (jumpCoff >= 40f && isGrounded)
+            {
+                float tempX = (moveCoff * 2) * xAxis;
+                float tempY = jumpCoff;
+                rb2d.velocity = new Vector2(tempX, tempY);
+                Invoke("ResetJump", 0.2f);
+            }
+
+            if (Input.GetKeyUp(KeyCode.Space))
+            {
+                if (isGrounded)
+                {
+                    rb2d.velocity = new Vector2(xAxis * moveCoff, jumpCoff);
+                    jumpCoff = 0.0f;
+                }
+                isJumped = true;
+                jumpCheck = true;
+            }
         }
+        
 
     }
 
