@@ -8,7 +8,7 @@ public class PlayerMain : MonoBehaviour
     private Animator animator;
     private Transform check;
 
-    private float xAxis;
+    public float xAxis;
     private bool isJumped;
 
     public float jumpCoff;
@@ -157,10 +157,10 @@ public class PlayerMain : MonoBehaviour
     private void ActionMove()
 
     {
-        if(isControl == true)
+        xAxis = Input.GetAxis("Horizontal");
+        if (isControl == true)
         {
             moveInput = Input.GetAxisRaw("Horizontal");
-            xAxis = Input.GetAxis("Horizontal");
 
 
             if (Input.GetAxisRaw("Horizontal") == 0)
