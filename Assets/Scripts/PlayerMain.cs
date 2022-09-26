@@ -5,6 +5,7 @@ using UnityEngine;
 public class PlayerMain : MonoBehaviour
 {
     private Rigidbody2D rb2d;
+    private SpriteRenderer sprite;
     private Animator animator;
     private Transform check;
 
@@ -30,6 +31,7 @@ public class PlayerMain : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        sprite = GetComponent<SpriteRenderer>();
         rb2d = GetComponent<Rigidbody2D>();
         //animator = transform.Find("Sprite").GetComponent<Animator>();
         check = transform.Find("Check");
@@ -66,13 +68,20 @@ public class PlayerMain : MonoBehaviour
             rb2d.transform.position.y - 0.5f), 0.5f, groundMask);
         ActionMove();
         ActionJump();
-
+        
     }
 
     private void FixedUpdate()
 
     {
-
+        if (isControl == false)
+        {
+            sprite.material.color = Color.black;
+        }
+        else
+        {
+            sprite.material.color = Color.white;
+        }
         //CheckIsGrounded();
         //CheckLanded();
         SetVelocity();
