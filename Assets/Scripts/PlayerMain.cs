@@ -207,7 +207,7 @@ public class PlayerMain : MonoBehaviour
 
             if (Input.GetKey(KeyCode.Space) && isGrounded && isJumped)
             {
-                jumpCoff += (Time.deltaTime * 40);
+                jumpCoff += (Time.deltaTime * 40f);
             }
 
             if (Input.GetKeyDown(KeyCode.Space) && isGrounded && isJumped)
@@ -217,7 +217,7 @@ public class PlayerMain : MonoBehaviour
 
             if (jumpCoff >= 40f && isGrounded)
             {
-                float tempX = (moveCoff * 2) * xAxis;
+                float tempX = (moveCoff * 2f) * xAxis;
                 float tempY = jumpCoff;
                 rb2d.velocity = new Vector2(tempX, tempY);
                 Invoke("ResetJump", 0.2f);
