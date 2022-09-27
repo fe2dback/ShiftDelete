@@ -207,7 +207,7 @@ public class PlayerMain : MonoBehaviour
 
             if (Input.GetKey(KeyCode.Space) && isGrounded && isJumped)
             {
-                jumpCoff += 0.2f;
+                jumpCoff += (Time.deltaTime * 40);
             }
 
             if (Input.GetKeyDown(KeyCode.Space) && isGrounded && isJumped)
