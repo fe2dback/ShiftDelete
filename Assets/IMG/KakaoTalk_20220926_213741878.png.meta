@@ -42,17 +42,17 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 500
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
   alphaIsTransparency: 1
-  spriteTessellationDetail: -1
+  spriteTessellationDetail: 0
   textureType: 8
   textureShape: 1
   singleChannelComponent: 0
@@ -103,18 +103,55 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
-    outline: []
+    sprites:
+    - serializedVersion: 2
+      name: KakaoTalk_20220926_213741878_0
+      rect:
+        serializedVersion: 2
+        x: 99
+        y: 63
+        width: 400
+        height: 271
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape:
+      - - {x: -12, y: -130.5}
+        - {x: 13, y: -135.5}
+        - {x: 87, y: -135.5}
+        - {x: 87, y: -34.5}
+        - {x: -88, y: 135.5}
+        - {x: -200, y: 135.5}
+        - {x: -200, y: 32.5}
+      tessellationDetail: 0
+      bones: []
+      spriteID: a673eb0e022088f4daad52cc2709d517
+      internalID: -989388679
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline:
+    - - {x: -152.5, y: 139}
+      - {x: -152.5, y: 33}
+      - {x: 34.5, y: -135}
+      - {x: 41.5, y: -136}
+      - {x: 136.5, y: -136}
+      - {x: 136.5, y: -39}
+      - {x: 82.5, y: 24}
+      - {x: -37.5, y: 136}
     physicsShape: []
     bones: []
     spriteID: 5e97eb03825dee720800000000000000
-    internalID: 0
+    internalID: 1537655665
     vertices: []
     indices: 
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      KakaoTalk_20220926_213741878_0: -989388679
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

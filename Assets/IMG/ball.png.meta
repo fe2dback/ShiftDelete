@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 2aa8b5ee1e96df14eb8ec7b202c2db4d
+guid: 6968d6f3f27c8ad4c810bc3f81c94060
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -42,12 +42,12 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 2
+  spriteMode: 1
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 500
+  spritePixelsToUnits: 100
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -103,35 +103,7 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites:
-    - serializedVersion: 2
-      name: KakaoTalk_20220926_213741789_0
-      rect:
-        serializedVersion: 2
-        x: 53
-        y: 86
-        width: 149
-        height: 47
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape:
-      - - {x: -41.5, y: 22.5}
-        - {x: -74.5, y: 18.5}
-        - {x: -74.5, y: -23.5}
-        - {x: 59.5, y: -21.5}
-        - {x: 73.5, y: -14.5}
-        - {x: 74.5, y: 17.5}
-        - {x: 66.5, y: 22.5}
-      tessellationDetail: 0
-      bones: []
-      spriteID: 6f2085908548e644fa3e34af87296733
-      internalID: 461708469
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
+    sprites: []
     outline: []
     physicsShape: []
     bones: []
@@ -142,8 +114,7 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable:
-      KakaoTalk_20220926_213741789_0: 461708469
+    nameFileIdTable: {}
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
