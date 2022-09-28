@@ -22,8 +22,11 @@ public class cam : MonoBehaviour
     {
         
         targetPos =  target.position;
-
-        if(targetPos.y > 28f)
+        if (targetPos.y > 38f)
+        {
+            transform.position = new Vector3(0, 48, -1);
+        }
+        else if(targetPos.y > 28f)
         {
             transform.position = new Vector3(0, 38, -1);
         }
