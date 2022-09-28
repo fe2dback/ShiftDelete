@@ -188,9 +188,9 @@ PolygonCollider2D:
   m_AutoTiling: 0
   m_Points:
     m_Paths:
-    - - {x: 0.32200003, y: 0.246}
-      - {x: 0.23448955, y: 0.24739966}
-      - {x: 0.23448955, y: 0.24739966}
+    - - {x: 0.31458795, y: 0.24105841}
+      - {x: 0.24230902, y: 0.24463025}
+      - {x: 0.24279775, y: 0.23925439}
       - {x: 0.24265905, y: 0.2455203}
       - {x: 0.24000001, y: 0.126}
       - {x: 0.24400002, y: 0.006}
@@ -3489,7 +3489,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1402247661}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -3.23, y: -7.68, z: 0}
+  m_LocalPosition: {x: -1.62, y: -8, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -3700,7 +3700,7 @@ GameObject:
   - component: {fileID: 1441600790}
   - component: {fileID: 1441600789}
   - component: {fileID: 1441600788}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: KakaoTalk_20220928_085523236_09_0
   m_TagString: Untagged
   m_Icon: {fileID: 0}
