@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: d85614a3f44289649b446696f54f4ae4
+guid: 63d977532c44932448058583e1be7fa2
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -105,38 +105,37 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: KakaoTalk_20220926_213742246_0
+      name: KakaoTalk_20220928_085523236_11_0
       rect:
         serializedVersion: 2
-        x: 21
-        y: 135
-        width: 334
-        height: 302
+        x: 18
+        y: 41
+        width: 201
+        height: 327
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape:
-      - - {x: 110, y: -68}
-        - {x: 74, y: 18}
-        - {x: 65, y: 109}
-        - {x: 65.19635, y: 144.28168}
-        - {x: 57, y: 151}
-        - {x: 44, y: 148}
-        - {x: -44, y: 145}
-        - {x: -50, y: 18}
-        - {x: -84, y: -35}
-        - {x: -167, y: -116}
-        - {x: -167, y: -147}
-        - {x: -123, y: -151}
-        - {x: -2, y: -151}
-        - {x: 161, y: -147}
-        - {x: 167, y: -135}
-        - {x: 160, y: -111}
+      - - {x: -22.5, y: 153.5}
+        - {x: -24.5, y: 16.5}
+        - {x: -97.5, y: 16.5}
+        - {x: -100.5, y: 7.5}
+        - {x: -98.5, y: 3.5}
+        - {x: -26.5, y: -36.5}
+        - {x: -30.5, y: -162.5}
+        - {x: -28.5, y: -163.5}
+        - {x: 7.5, y: -160.5}
+        - {x: 6.5, y: -79.5}
+        - {x: 23.5, y: -1.5}
+        - {x: 100.5, y: 55.5}
+        - {x: 26.5, y: 53.5}
+        - {x: 20.5, y: 134.5}
+        - {x: 4.5, y: 163.5}
       tessellationDetail: 0
       bones: []
-      spriteID: 7dc48ec125dcd7f4cb442c173140e561
-      internalID: -1846223722
+      spriteID: d6b2fd5a2ac60e446991d0657b5fc862
+      internalID: 1031714642
       vertices: []
       indices: 
       edges: []
@@ -152,7 +151,7 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      KakaoTalk_20220926_213742246_0: -1846223722
+      KakaoTalk_20220928_085523236_11_0: 1031714642
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
