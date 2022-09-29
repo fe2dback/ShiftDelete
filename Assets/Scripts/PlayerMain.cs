@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class PlayerMain : MonoBehaviour
 {
+    private Transform p;
+
     private Rigidbody2D rb2d;
     private SpriteRenderer sprite;
     private Animator animator;
@@ -53,22 +55,27 @@ public class PlayerMain : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
-        if(isGrounded == true && jumpCheck == true)
+
+        if (isGrounded == true && jumpCheck == true)
         {
             isControl = false;
             jumpCheck = false;
         }
-        if(isGrounded == true && isControl == false && (rb2d.velocity.x < 0.05f && rb2d.velocity.x > -0.05f ) && jumpCheck == false)
+        if (isGrounded == true && isControl == false && (rb2d.velocity.x < 0.05f && rb2d.velocity.x > -0.05f) && jumpCheck == false)
         {
             isControl = true;
         }
-        
-        isGrounded = Physics2D.OverlapCircle(new Vector2(rb2d.transform.position.x, 
+
+        isGrounded = Physics2D.OverlapCircle(new Vector2(rb2d.transform.position.x,
             rb2d.transform.position.y - 0.5f), 0.5f, groundMask);
         ActionMove();
         ActionJump();
-        
+
+        if(transform.position.x > 20 && transform.position.y < 37)
+        {
+            transform.position = new Vector2(16, -7);
+        }
+
     }
 
     private void FixedUpdate()
@@ -133,7 +140,7 @@ public class PlayerMain : MonoBehaviour
     */
     private void SetVelocity()
     {
-        if(isControl == true)
+        if (isControl == true)
         {
             if (jumpCoff == 0.0f && isGrounded && isJumped)
             {
@@ -147,7 +154,7 @@ public class PlayerMain : MonoBehaviour
             }
         }
 
-     
+
     }
 
 
@@ -193,8 +200,8 @@ public class PlayerMain : MonoBehaviour
         }
     }
     private void ActionJump()
-    {   
-        if(isControl == true)
+    {
+        if (isControl == true)
         {
             if (jumpCoff > 0)
             {
@@ -234,9 +241,9 @@ public class PlayerMain : MonoBehaviour
                 }
             }
         }
-        
-
     }
+
+
 
     void ResetJump()
     {
@@ -244,3 +251,4 @@ public class PlayerMain : MonoBehaviour
         jumpCoff = 0;
     }
 }
+
